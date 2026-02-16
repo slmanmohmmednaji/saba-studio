@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "game": "The Invisible Soldier",
+    "media": "Media",
+    "docs": "Documentation"
+  },
+  "common": {
+    "downloadDemo": "Download The Invisible Soldier",
+    "watchGameplay": "Watch gameplay",
+    "screenshots": "Screenshots",
+    "backToTop": "Back to top",
+    "comingSoon": "Coming soon",
+    "placeholder": "Placeholder",
+    "learnMore": "Learn More",
+    "meetTeam": "Meet the Team"
+  },
+  "home": {
+    "title": "Saba Studio",
+    "subtitle": "A small team crafting big moments",
+    "headline": "The Invisible Soldier",
+    "tagline": "We make games that tell stories, inspire minds, and make a difference.",
+    "intro": "At Saba Studio, we are not just game developers, but storytellers, digital artists, and experience engineers."
+  },
+  "about": {
+    "whoWeAre": "We are Saba Studio, creators of immersive experiences and extraordinary stories.",
+    "title": "The Spirit of Creativity at Saba Studio",
+    "lead": "At Saba Studio, we are not just game developers, but storytellers, digital artists, and experience engineers. We believe games are more than entertainment; they are a medium for expression, learning, and positive impact. We are united by a shared passion for turning bold ideas into living digital worlds.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be a beacon of creativity in game development, offering unique experiences that reflect our culture and inspire a new generation of players and creators.",
+    "missionTitle": "Our Mission",
+    "missionText": "Developing high-quality games that combine fun, meaningful storytelling, and technical innovation, while building a sustainable community of players.",
+    "teamTitle": "Saba Studio Team",
+    "teamLead": "Meet the team making success a reality"
+  },
+  "game": {
+    "title": "Invisible Soldier: Shadow Ops",
+    "lead": "An immersive tactical stealth experience that puts your survival skills to the ultimate test behind enemy lines.",
+    "featuresTitle": "Technical Features",
+    "techTitle": "Engine & Technologies",
+    "storyTitle": "The Narrative",
+    "storyText": "Deep within a mysterious facility, you awaken as the only operative capable of uncovering the truth. Your weapon isn't your greatest asset—your shadow is. Every heartbeat could betray your position."
+  },
+  "media": {
+    "title": "Media & Gallery",
+    "lead": "Explore the world of The Invisible Soldier through exclusive screenshots and gameplay footage.",
+    "videoTitle": "Gameplay Video",
+    "galleryTitle": "Screenshots"
+  },
+  "docs": {
+    "title": "Game Documentation",
+    "lead": "Story, Idea, Features, and Technologies.",
+    "sections": {
+      "general": {
+        "title": "General Information",
+        "items": [
+          "Game Title: The Invisible Soldier",
+          "Genre: Narrative / Psychological Adventure",
+          "Target Platforms: PC, Smartphones, Consoles",
+          "Target Age Group: 16+",
+          "Language: English (with Arabic support potential)"
+        ]
+      },
+      "idea": {
+        "title": "Core Idea",
+        "description": "The game focuses on a personal journey in a world affected by a traumatic experience.",
+        "points": [
+          "Stage One: Direct confrontation with enemies (Combat).",
+          "Subsequent Stages: Experience shifts towards exploration and internal understanding.",
+          "Combat is not the primary goal, but a reflection of the character's psychological state."
+        ]
+      },
+      "character": {
+        "title": "Main Character",
+        "name": "Muslih",
+        "age": "Early 20s",
+        "motive": "Understanding his personal experience and helping the city recover as part of his psychological journey.",
+        "conflict": "Anxiety, guilt, emotional detachment, and searching for meaning after survival."
+      },
+      "narrative": {
+        "title": "Narrative Background",
+        "points": [
+          "Muslih lived through a traumatic experience that left deep psychological scars.",
+          "He tries to adapt by repairing the city and helping people.",
+          "He believes that fixing what is broken around him might help him understand what is broken within.",
+          "The journey is dual: External (city repair) and Internal (self-discovery).",
+          "Decisions reveal new aspects of his personality, moving beyond absolute right and wrong."
+        ]
+      },
+      "world": {
+        "title": "Game World",
+        "description": "An urban, semi-destroyed environment including neighborhoods, towers, and damaged infrastructure.",
+        "style": "The environment itself tells the story (Environmental Storytelling)."
+      },
+      "gameplay": {
+        "title": "Gameplay Style",
+        "items": [
+          "Exploration: Moving and interacting with locations and characters.",
+          "Information Gathering: May be useful later.",
+          "Narrative Decisions: Impact Muslih's psychological journey.",
+          "Direct Confrontation: Primarily present in the first stage only."
+        ]
+      },
+      "mechanics": {
+        "title": "Core Mechanics",
+        "items": [
+          "Repairing facilities and important locations.",
+          "Progressing through exploration.",
+          "Collecting information for later use.",
+          "Making decisions that reveal character layers."
+        ]
+      },
+      "progression": {
+        "title": "Progression",
+        "description": "Divided into stages/chapters, each uncovering a new layer of Muslih's psychological state. The end of the first stage leaves the player with unresolved emotional questions."
+      },
+      "themes": {
+        "title": "Themes",
+        "items": [
+          "Trauma and Recovery.",
+          "The Hidden Cost of Survival.",
+          "Repair as a Means of Healing.",
+          "Identity after Loss."
+        ]
+      },
+      "art": {
+        "title": "Art Direction",
+        "description": "Muted color palette with selective lighting, realistic yet poetic environmental details, and a simple, unobtrusive UI."
+      },
+      "audio": {
+        "title": "Sound and Music",
+        "description": "Quiet ambient sound effects, environmental sounds carrying narrative meaning, and intentional use of silence."
+      },
+      "audience": {
+        "title": "Target Audience",
+        "items": [
+          "Narrative game enthusiasts.",
+          "Those interested in psychological experiences.",
+          "Players seeking meaning over competition."
+        ]
+      },
+      "usp": {
+        "title": "Unique Selling Points",
+        "items": [
+          "Visual storytelling without heavy reliance on dialogue.",
+          "An experience with a distinct Arabic cultural identity.",
+          "Focus on emotional impact over winning."
+        ]
+      }
+    }
+  },
+  "footer": {
+    "rights": "All Rights Reserved © 2026 Saba Studio Team",
+    "description": "An indie game development studio focused on creating unique experiences.",
+    "contactTitle": "Contact Saba Team"
+  }
+}
