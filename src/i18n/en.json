@@ -152,7 +152,19 @@
   },
   "footer": {
     "rights": "All Rights Reserved © 2026 Saba Studio Team",
-    "description": "An indie game development studio focused on creating unique experiences.",
-    "contactTitle": "Contact Saba Team"
+    "description": "We are Saba Studio, a team dedicated to developing innovative gaming experiences and immersive stories that blend artistic creativity, technical excellence, and unique cultural identity.",
+    "contactTitle": "Contact Us",
+    "location": "Yemen",
+    "phone": "+967 777 863 154",
+    "email": "info@sabastudio.com",
+    "quickLinks": "Quick Links",
+    "aboutTitle": "Saba Studio",
+    "followUs": "Follow Us"
+  },
+  "team": {
+    "writer": "Writing Team",
+    "tech": "Technical Team",
+    "designers": "Designers",
+    "artists": "Artists"
   }
 }

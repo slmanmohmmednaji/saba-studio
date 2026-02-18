@@ -5,7 +5,7 @@ export const teamMembers = [
     name_en: "Mohammed Al-Aghbari",
     role_ar: "مبرمج",
     role_en: "Programmer",
-    img: "/src/assets/team/mohammed.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/mohammed.jpg`
   },
   {
     id: "t2",
@@ -13,7 +13,7 @@ export const teamMembers = [
     name_en: "Muhib Akram",
     role_ar: "مبرمج",
     role_en: "Programmer",
-    img: "/src/assets/team/muhibb.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/muhibb.jpg`
   },
   {
     id: "t3",
@@ -21,7 +21,7 @@ export const teamMembers = [
     name_en: "Salman Al-Majidi",
     role_ar: "مبرمج",
     role_en: "Programmer",
-    img: "/src/assets/team/salman.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/salman.jpg`
   },
   {
     id: "t4",
@@ -29,7 +29,7 @@ export const teamMembers = [
     name_en: "Ahmed Al-Ariqi",
     role_ar: "رسام شخصيات",
     role_en: "Character Artist",
-    img: "/src/assets/team/ahmed.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/ahmed.jpg`
   },
   {
     id: "t5",
@@ -37,7 +37,7 @@ export const teamMembers = [
     name_en: "Amani Karmadi",
     role_ar: "رسام خلفيات",
     role_en: "Background Artist",
-    img: "/src/assets/team/amani.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/amani.jpg`
   },
   {
     id: "t6",
@@ -45,7 +45,7 @@ export const teamMembers = [
     name_en: "Noah Al-Salmi",
     role_ar: "فنان 3D",
     role_en: "3D Artist",
-    img: "/src/assets/team/noah.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/noah.jpg`
   },
   {
     id: "t7",
@@ -53,7 +53,7 @@ export const teamMembers = [
     name_en: "Yahya Al-Adimi",
     role_ar: "مصمم",
     role_en: "Designer",
-    img: "/src/assets/team/yahya.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/yahya.jpg`
   },
   {
     id: "t8",
@@ -61,7 +61,7 @@ export const teamMembers = [
     name_en: "Nada Al-Hajari",
     role_ar: "كاتبة",
     role_en: "Writer",
-    img: "/src/assets/team/nada.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/nada.jpg`
   },
   {
     id: "t9",
@@ -69,6 +69,6 @@ export const teamMembers = [
     name_en: "Abdulraqib Abdullah",
     role_ar: "مصمم",
     role_en: "Designer",
-    img: "/src/assets/team/abdulraqib.jpg"
+    img: `${import.meta.env.BASE_URL}assets/team/abdulraqib.jpg`
   }
 ];

@@ -2,12 +2,14 @@
   "name": "saba-studio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://slmanmohmmednaji.github.io/saba-studio/",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

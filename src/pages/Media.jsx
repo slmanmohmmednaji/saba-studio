@@ -7,12 +7,12 @@ import Lightbox from "../components/Lightbox.jsx"; // مكون عرض الصور
 // قائمة الصور المتاحة في المعرض
 // ... (shots remain the same)
 const shots = [
-    "/src/assets/screenshots/shot-01.png",
-    "/src/assets/screenshots/shot-02.png",
-    "/src/assets/screenshots/shot-03.png",
-    "/src/assets/screenshots/shot-04.png",
-    "/src/assets/screenshots/shot-05.png",
-    "/src/assets/screenshots/shot-06.png"
+    `${import.meta.env.BASE_URL}assets/screenshots/shot-01.png`,
+    `${import.meta.env.BASE_URL}assets/screenshots/shot-02.png`,
+    `${import.meta.env.BASE_URL}assets/screenshots/shot-03.png`,
+    `${import.meta.env.BASE_URL}assets/screenshots/shot-04.png`,
+    `${import.meta.env.BASE_URL}assets/screenshots/shot-05.png`,
+    `${import.meta.env.BASE_URL}assets/screenshots/shot-06.png`
 ];
 
 /**
@@ -72,7 +72,7 @@ export default function Media() {
                                 className="h-full w-full"
                                 controls
                                 preload="metadata"
-                                src="/src/assets/video/gameplay.mp4"
+                                src={`${import.meta.env.BASE_URL}assets/video/gameplay.mp4`}
                                 onError={(e) => {
                                     e.currentTarget.style.display = "none";
                                 }}
@@ -110,7 +110,7 @@ export default function Media() {
                                 }}
                             >
                                 <div className="aspect-video bg-white/5 relative overflow-hidden">
-                                    <img src={s} alt="shot" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                                    <img src={s} alt="shot" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
                                     <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
                                 </div>
                             </button>

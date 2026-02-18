@@ -22,7 +22,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-night/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-night/80 backdrop-blur-xl">
       <div className="container-x flex h-20 items-center justify-between relative">
         {/* Left Section: Logo */}
         <div className="flex flex-1 justify-start">

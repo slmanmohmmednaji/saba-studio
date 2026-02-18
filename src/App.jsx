@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import "./i18n/index.js";
 import SiteLayout from "./layout/SiteLayout.jsx";
 
@@ -10,7 +10,7 @@ import Media from "./pages/Media.jsx";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <SiteLayout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,6 +19,6 @@ export default function App() {
           <Route path="/game" element={<Game />} />
         </Routes>
       </SiteLayout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
