@@ -22,9 +22,10 @@ export default function Home() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-accent to-brand-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                 <div className="relative card overflow-hidden aspect-video flex items-center justify-center p-0">
                   <img
-                    src="/src/assets/screenshots/shot-01.png"
+                    src={`${import.meta.env.BASE_URL}assets/screenshots/shot-01.png`}
                     alt="The Invisible Soldier"
                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition duration-700"
+                    loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>

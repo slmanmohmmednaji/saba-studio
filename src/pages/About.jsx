@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import SectionReveal from "../components/SectionReveal.jsx";
+import TeamCarousel from "../components/TeamCarousel.jsx";
 import { teamMembers } from "../data/teamMembers.js"; // بيانات أعضاء الفريق
 
 /**
@@ -46,42 +47,44 @@ export default function About() {
       <div className="mt-12 md:mt-24">
         <SectionReveal>
           <h3 className="h3 text-center mb-2">{t("about.teamTitle")}</h3>
-          <p className="text-center text-muted max-w-2xl mx-auto mb-10">{t("about.teamLead")}</p>
+          <p className="text-center text-muted max-w-2xl mx-auto mb-16">{t("about.teamLead")}</p>
         </SectionReveal>
 
-        {/* عرض أعضاء الفريق بشكل شبكي (Grid) */}
-        <div className="mx-auto grid max-w-6xl gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
-          {teamMembers.map((m, i) => (
-            <SectionReveal key={m.id} delay={0.1 * (i % 3)} direction="up" distance={20}>
-              <div className="group card overflow-hidden border-white/5 bg-night/50 hover:border-accent/40 transition-all duration-500 hover:shadow-glow-accent hover:-translate-y-2">
-                <div className="relative aspect-[3/4] w-full bg-white/5 overflow-hidden">
-                  {/* أيقونة احتياطية تظهر خلف الصورة */}
-                  <div className="absolute inset-0 flex items-center justify-center text-muted z-0">
-                    <span className="text-4xl opacity-20 group-hover:scale-150 transition-transform duration-700">★</span>
-                  </div>
-                  <img
-                    src={m.img}
-                    alt={isAr ? m.name_ar : m.name_en}
-                    className="relative z-10 h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                  {/* تدرج ظلي لتحسين قراءة المعلومات فوق الصورة */}
-                  <div className="absolute inset-0 z-20 bg-gradient-to-t from-night via-transparent to-transparent opacity-80" />
-                  <div className="absolute inset-0 z-25 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />
-                </div>
-                <div className="relative z-30 -mt-16 p-5 bg-gradient-to-t from-night to-transparent">
-                  <div className="text-lg font-bold text-white group-hover:text-accent transition-colors">
-                    {isAr ? m.name_ar : m.name_en}
-                  </div>
-                  <div className="mt-1 text-sm text-muted font-medium">
-                    {isAr ? m.role_ar : m.role_en}
-                  </div>
-                </div>
-              </div>
-            </SectionReveal>
-          ))}
+        {/* عرض أعضاء الفريق بشكل شريط متحرك (Carousel) */}
+        <div className="max-w-7xl mx-auto space-y-20">
+
+          {/* فريق الكتابة */}
+          <div className="space-y-6 flex flex-col items-center">
+            <h4 className="text-2xl font-bold text-accent border-b border-white/5 pb-2">
+              {t("team.writer")}
+            </h4>
+            <TeamCarousel members={teamMembers.filter(m => m.role_en === "Writer")} />
+          </div>
+
+          {/* المصممون */}
+          <div className="space-y-6 flex flex-col items-center">
+            <h4 className="text-2xl font-bold text-accent border-b border-white/5 pb-2">
+              {t("team.designers")}
+            </h4>
+            <TeamCarousel members={teamMembers.filter(m => m.role_en === "Designer")} />
+          </div>
+
+          {/* الرسامون */}
+          <div className="space-y-6 flex flex-col items-center">
+            <h4 className="text-2xl font-bold text-accent border-b border-white/5 pb-2">
+              {t("team.artists")}
+            </h4>
+            <TeamCarousel members={teamMembers.filter(m => ["Character Artist", "Background Artist", "3D Artist"].includes(m.role_en))} />
+          </div>
+
+          {/* الفريق التقني */}
+          <div className="space-y-6 flex flex-col items-center">
+            <h4 className="text-2xl font-bold text-accent border-b border-white/5 pb-2">
+              {t("team.tech")}
+            </h4>
+            <TeamCarousel members={teamMembers.filter(m => m.role_en === "Programmer")} />
+          </div>
+
         </div>
       </div>
     </div>
