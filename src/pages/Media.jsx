@@ -99,23 +99,60 @@ export default function Media() {
                     </div>
                 </SectionReveal>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {shots.map((s, i) => (
-                        <SectionReveal key={s} delay={0.05 * (i % 3)} direction="up" distance={10}>
-                            <button
-                                className="card overflow-hidden text-left transition hover:translate-y-[-4px] hover:shadow-glow-accent group relative block w-full"
-                                onClick={() => {
-                                    setSrc(s);  // تحديد الصورة
-                                    setOpen(true); // فتح النافذة
-                                }}
-                            >
-                                <div className="aspect-video bg-white/5 relative overflow-hidden">
-                                    <img src={s} alt="shot" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                                    <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 touch-pan-y">
+                    {shots.map((s, i) => {
+                        // منطق ذكي للتمييز بين التمرير والضغط
+                        let touchStartX = 0;
+                        let touchStartY = 0;
+
+                        return (
+                            <SectionReveal key={s} delay={0.05 * (i % 3)} direction="up" distance={10}>
+                                <div
+                                    className="card overflow-hidden cursor-pointer transition hover:translate-y-[-10px] hover:shadow-glow-accent group relative block w-full touch-pan-y select-none active:scale-[0.98] duration-300"
+                                    onTouchStart={(e) => {
+                                        touchStartX = e.touches[0].clientX;
+                                        touchStartY = e.touches[0].clientY;
+                                    }}
+                                    onTouchEnd={(e) => {
+                                        const touchEndX = e.changedTouches[0].clientX;
+                                        const touchEndY = e.changedTouches[0].clientY;
+                                        // إذا كانت الحركة بسيطة جداً (أقل من 10 بكسل) نعتبرها ضغطة لفتح الصورة
+                                        if (Math.abs(touchStartX - touchEndX) < 10 && Math.abs(touchStartY - touchEndY) < 10) {
+                                            setSrc(s);
+                                            setOpen(true);
+                                        }
+                                    }}
+                                    onClick={(e) => {
+                                        // نترك الـ Click للأجهزة التي تستخدم الماوس فقط
+                                        if (window.matchMedia("(pointer: fine)").matches) {
+                                            setSrc(s);
+                                            setOpen(true);
+                                        }
+                                    }}
+                                    role="button"
+                                    tabIndex={0}
+                                >
+                                    <div className="aspect-video bg-white/5 relative overflow-hidden pointer-events-none">
+                                        <img
+                                            src={s}
+                                            alt="shot"
+                                            className="h-full w-full object-cover transition duration-700 group-hover:scale-110 pointer-events-none select-none"
+                                            loading="lazy"
+                                            draggable="false"
+                                        />
+                                        <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300 pointer-events-none" />
+
+                                        {/* أيقونة فتح تظهر على الديسكتوب فقط */}
+                                        <div className="absolute inset-0 hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                            <div className="bg-night/60 backdrop-blur-md p-3 rounded-full text-accent border border-accent/20">
+                                                🔍
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </button>
-                        </SectionReveal>
-                    ))}
+                            </SectionReveal>
+                        );
+                    })}
                 </div>
             </div>
 
