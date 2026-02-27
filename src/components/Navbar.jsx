@@ -90,47 +90,71 @@ export default function Navbar() {
           {/* Drawer Content */}
           <div
             className={cn(
-              "relative z-10 h-full w-full bg-night border-l border-white/10 shadow-2xl transition-transform duration-500 ease-out",
+              "relative z-10 h-full w-full bg-night/95 backdrop-blur-3xl border-l border-white/5 shadow-2xl transition-transform duration-500 ease-out flex flex-col",
               isOpen ? "translate-x-0" : "ltr:translate-x-full rtl:-translate-x-full"
             )}
           >
-            {/* Menu Header */}
-            <div className="flex h-20 items-center justify-between px-6 border-b border-white/5">
-              <div className="flex items-center gap-4">
+            {/* Background Texture matching identity */}
+            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none opacity-40">
+              <div className="absolute top-1/4 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-[100px]" />
+              <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-[#8B4513]/10 rounded-full blur-[100px]" />
+            </div>
+
+            {/* Menu Header - Elegant & Tidy */}
+            <div className="flex h-20 items-center justify-between px-6 border-b border-white/5 bg-white/5 backdrop-blur-md">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20">
+                  <img src={logo} alt="logo" className="h-7 w-7 object-contain" />
+                </div>
+                <div className="flex flex-col leading-none">
+                  <span className="text-xs uppercase tracking-[0.2em] text-accent/60 font-black">Saba</span>
+                  <span className="text-lg font-black tracking-tighter text-white">STUDIO</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <div className="hover:bg-white/10 rounded-xl transition-colors">
+                  <LanguageSwitcher />
+                </div>
+                <div className="h-6 w-px bg-white/10 mx-1" />
                 <button
                   onClick={closeMenu}
-                  className="flex items-center justify-center text-3xl text-ink/70 hover:text-accent transition-colors"
+                  className="flex h-10 w-10 items-center justify-center text-3xl text-white/40 hover:text-accent hover:bg-accent/10 rounded-xl transition-all active:scale-95"
                   aria-label="Close"
                 >
                   <FiX />
                 </button>
-                <LanguageSwitcher />
-              </div>
-
-              <div className="text-xl font-black tracking-tight text-white flex items-center gap-2">
-                <img src={logo} alt="logo" className="h-8 w-8 rounded-lg" />
-                <div className="flex items-center">
-                  <span className="text-accent">SABA</span>
-                  <span className="ml-1 text-white">STUDIO</span>
-                </div>
               </div>
             </div>
 
-            {/* Menu Links */}
-            <nav className="mt-12 flex flex-col items-start gap-8 px-8">
-              <a href="#" className={linkClass({ isActive: false })} onClick={closeMenu}>
-                {t("nav.home")}
-              </a>
-              <a href="#about" className={linkClass({ isActive: false })} onClick={closeMenu}>
-                {t("nav.about")}
-              </a>
-              <a href="#media" className={linkClass({ isActive: false })} onClick={closeMenu}>
-                {t("nav.media")}
-              </a>
-              <a href="#game" className={linkClass({ isActive: false })} onClick={closeMenu}>
-                {t("nav.game")}
-              </a>
+            {/* Menu Links - Centered & Pill-shaped */}
+            <nav className="flex-1 flex flex-col items-center justify-center gap-5 px-8 pb-10">
+              {[
+                { label: t("nav.home"), href: "#", isActive: true },
+                { label: t("nav.about"), href: "#about" },
+                { label: t("nav.media"), href: "#media" },
+                { label: t("nav.game"), href: "#game" },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={cn(
+                    "w-full max-w-[300px] py-4 rounded-full text-lg font-black transition-all duration-300 text-center tracking-wide border",
+                    link.isActive
+                      ? "bg-accent/20 text-accent border-accent/30 shadow-glow-accent/5 scale-[1.05]"
+                      : "text-white/60 hover:text-white hover:bg-white/5 border-transparent hover:border-white/10"
+                  )}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
+
+            {/* Bottom Footer Info (Subtle) */}
+            <div className="p-8 border-t border-white/5 bg-white/[0.02] flex justify-center">
+              <div className="text-[10px] uppercase tracking-[0.4em] text-white/10 font-black">Saba Studio © 2026</div>
+            </div>
           </div>
         </div>
       </header>

@@ -66,11 +66,18 @@ export default function TeamCarousel({ members }) {
                 </button>
             </div>
 
-            {/* Carousel Container with specialized mobile centering */}
+            {/* Carousel Container with specialized centering and vertical scroll support */}
             <div
                 ref={scrollRef}
                 onScroll={checkScroll}
-                className="flex gap-4 md:gap-8 overflow-x-auto pb-8 pt-4 no-scrollbar snap-x snap-mandatory touch-pan-x justify-start px-[15%] md:px-0"
+                style={{ touchAction: 'pan-y' }}
+                className={
+                    "flex gap-4 md:gap-8 overflow-x-auto pb-8 pt-4 no-scrollbar snap-x snap-mandatory " +
+                    "md:justify-center md:px-0 " +
+                    (members.length <= 1
+                        ? "justify-center px-0"
+                        : "justify-start px-[15vw]")
+                }
             >
                 {members.map((m, i) => (
                     <motion.div
@@ -80,14 +87,15 @@ export default function TeamCarousel({ members }) {
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
                         className="flex-shrink-0 w-[70vw] md:w-[320px] snap-center"
+                        style={{ touchAction: 'pan-y' }}
                     >
                         <div className="group relative flex flex-col rounded-3xl overflow-hidden bg-night/60 border border-white/5 shadow-2xl transition-all duration-500 hover:border-accent/40 hover:shadow-glow-accent/10">
-                            {/* Image Container */}
-                            <div className="relative aspect-[3/4] overflow-hidden bg-white/5">
+                            {/* Image Container - Using object-cover to fill container */}
+                            <div className="relative aspect-[3/4] overflow-hidden pointer-events-none">
                                 <img
                                     src={m.img}
                                     alt={isAr ? m.name_ar : m.name_en}
-                                    className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                                     loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-night/60 to-transparent" />
