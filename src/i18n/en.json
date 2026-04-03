@@ -14,14 +14,18 @@
     "comingSoon": "Coming soon",
     "placeholder": "Placeholder",
     "learnMore": "Learn More",
-    "meetTeam": "Meet the Team"
+    "meetTeam": "Meet the Team",
+    "meetMusleh": "Meet Musleh",
+    "readStory": "Read the Story"
   },
   "home": {
     "title": "Saba Studio",
     "subtitle": "A small team crafting big moments",
     "headline": "The Invisible Soldier",
     "tagline": "We make games that tell stories, inspire minds, and make a difference.",
-    "intro": "At Saba Studio, we are not just game developers, but storytellers, digital artists, and experience engineers."
+    "intro": "In the heart of chaos emerges Musleh, a soldier who didn't choose his weapon, but chose his shadow as a means of survival and healing.",
+    "gameTitle": "The Invisible Soldier",
+    "gameSubtitle": "Shadow Ops"
   },
   "about": {
     "whoWeAre": "We are Saba Studio, creators of immersive experiences and extraordinary stories.",
